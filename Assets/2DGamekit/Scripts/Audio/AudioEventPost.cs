@@ -15,7 +15,7 @@ public class AudioEventPost : MonoBehaviour
     {
         //FMOD.Studio.System.setParameterByName("PlrFloorType")
 
-        AudioManager.Instance.PlaySound(audioObject.Path, transform.position);
+        AudioManager.Instance.PlaySound(audioObject, transform.position);
     }
 
 }

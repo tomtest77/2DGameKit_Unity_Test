@@ -1236,6 +1236,7 @@ retry:
             try
             {
                 PlayOneShot(eventReference.Guid, position);
+                //Debug.Log("Playing One Shot at position: " + position);
             }
             catch (EventNotFoundException)
             {

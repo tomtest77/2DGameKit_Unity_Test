@@ -16,6 +16,11 @@ namespace Gamekit2D
         public Vector3 moveVector { get { return m_MoveVector; } }
         public Transform Target { get { return m_Target; } }
 
+        // FMOD Audio Component
+        public EnemyAudio enemyAudio;
+        private bool isPlayerDetected = false;
+        private bool isPlayerDetectedOld = false;
+
         [Tooltip("If the sprite face left on the spritesheet, enable this. Otherwise, leave disabled")]
         public bool spriteFaceLeft = false;
 
@@ -103,6 +108,8 @@ namespace Gamekit2D
             m_Animator = GetComponent<Animator>();
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
+            enemyAudio = GetComponent<EnemyAudio>();
+
             m_OriginalColor = m_SpriteRenderer.color;
 
             if(projectilePrefab != null)
@@ -146,8 +153,36 @@ namespace Gamekit2D
 
         void FixedUpdate()
         {
+
+            // If the detection state has changed, update the AudioManager counter accordingly
+            if (isPlayerDetected != isPlayerDetectedOld)
+            {
+                if (isPlayerDetected)
+                {
+                    // Transition: false -> true, so add 1
+                    AudioManager.Instance.numberOfMonstersDetectedBy++;
+                    Debug.Log("Adding 1");
+                }
+                else
+                {
+                    // Transition: true -> false, so subtract 1
+                    AudioManager.Instance.numberOfMonstersDetectedBy--;
+                    Debug.Log("Subtracting 1");
+
+                    //// Optionally ensure the counter doesn't drop below zero
+                    //if (audioManager.numberOfMonstersDetectedBy < 0)
+                    //{
+                    //    audioManager.numberOfMonstersDetectedBy = 0;
+                    //}
+                }
+
+                // Update the stored state to match the new detection state
+                isPlayerDetectedOld = isPlayerDetected;
+            }
+
             if (m_Dead)
                 return;
+
 
             m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);
 
@@ -231,12 +266,19 @@ namespace Gamekit2D
         {
             //If the player don't have control, they can't react, so do not pursue them
             if (!PlayerInput.Instance.HaveControl)
+            {
+                enemyAudio.PlayIdleLoop();
+                isPlayerDetected = false;
                 return;
+            }
 
             Vector3 dir = PlayerCharacter.PlayerInstance.transform.position - transform.position;
 
             if (dir.sqrMagnitude > viewDistance * viewDistance)
             {
+                enemyAudio.PlayIdleLoop();
+                isPlayerDetected = false;
+                //Debug.Log(isPlayerDetected);
                 return;
             }
 
@@ -246,6 +288,8 @@ namespace Gamekit2D
 
             if (angle > viewFov * 0.5f)
             {
+                enemyAudio.PlayIdleLoop();
+                isPlayerDetected = false;
                 return;
             }
 
@@ -253,6 +297,10 @@ namespace Gamekit2D
             m_TimeSinceLastTargetView = timeBeforeTargetLost;
 
             m_Animator.SetTrigger(m_HashSpottedPara);
+
+            enemyAudio.StopIdleLoop();
+            enemyAudio.PlayDetect();
+            isPlayerDetected = true;
         }
 
         public void OrientToTarget()
@@ -323,7 +371,8 @@ namespace Gamekit2D
             if((m_Target.transform.position - transform.position).sqrMagnitude < (meleeRange * meleeRange))
             {
                 m_Animator.SetTrigger(m_HashMeleeAttackPara);
-                meleeAttackAudio.PlayRandomSound();
+                //meleeAttackAudio.PlayRandomSound();
+                enemyAudio.PlayAttack();
             }
         }
 
@@ -380,7 +429,9 @@ namespace Gamekit2D
 
             BulletObject obj = m_BulletPool.Pop(shootingOrigin.TransformPoint(shootPosition));
 
-            shootingAudio.PlayRandomSound();
+            //shootingAudio.PlayRandomSound();
+
+            enemyAudio.PlayAttack();
 
             obj.rigidbody2D.velocity = (GetProjectilVelocity(m_TargetShootPosition, shootingOrigin.transform.position));
         }
@@ -455,7 +506,11 @@ namespace Gamekit2D
 
             m_Animator.SetTrigger(m_HashDeathPara);
 
-            dieAudio.PlayRandomSound();
+            //dieAudio.PlayRandomSound();
+
+            enemyAudio.PlayDeath();
+
+            isPlayerDetected = false;
 
             m_Dead = true;
             m_Collider.enabled = false;
@@ -466,9 +521,15 @@ namespace Gamekit2D
         public void Hit(Damager damager, Damageable damageable)
         {
             if (damageable.CurrentHealth <= 0)
+            {
+                //Die(damager, damageable);
+                //enemyAudio.PlayDeath();
                 return;
+            }
 
             m_Animator.SetTrigger(m_HashHitPara);
+
+            enemyAudio.PlayPain();
 
             Vector2 throwVector = new Vector2(0, 3.0f);
             Vector2 damagerToThis = damager.transform.position - transform.position;
@@ -525,7 +586,8 @@ namespace Gamekit2D
 
         public void PlayFootStep()
         {
-            footStepAudio.PlayRandomSound();
+            enemyAudio.PlayFootstep();
+            //footStepAudio.PlayRandomSound();
         }
 
 #if UNITY_EDITOR

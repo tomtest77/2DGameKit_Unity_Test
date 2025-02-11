@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 95484841071781558}
   - component: {fileID: 114539101004484498}
   - component: {fileID: 114108602925935074}
+  - component: {fileID: 7578830654469108924}
   m_Layer: 9
   m_Name: Spitter
   m_TagString: Untagged
@@ -31,15 +32,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162167311688620}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4329106020219736}
   - {fileID: 4486111212680060}
   - {fileID: 4504477849526258}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212505017160194778
 SpriteRenderer:
@@ -110,6 +112,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -124,6 +132,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -168,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dfa83e29f454446b6abdda921f4bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAudio: {fileID: 0}
   spriteFaceLeft: 0
   speed: 5
   gravity: 10
@@ -190,7 +218,7 @@ MonoBehaviour:
   flickeringDuration: 0.2
 --- !u!95 &95484841071781558
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -203,10 +231,12 @@ Animator:
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &114539101004484498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +305,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e3819811419e1459820222ccf3ffb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7578830654469108924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162167311688620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db143a7e6b44f3e43a6afb746d2be22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: 1945782195
+      Data2: 1328834860
+      Data3: -196018297
+      Data4: -604501475
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_fs
+  idleLoopEvent:
+    Guid:
+      Data1: -1582190134
+      Data2: 1099290125
+      Data3: 1854897557
+      Data4: -513644091
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_idle_lp
+  detectEvent:
+    Guid:
+      Data1: 1949763321
+      Data2: 1265303210
+      Data3: 1178961052
+      Data4: -2112692555
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_detect
+  attackEvent:
+    Guid:
+      Data1: 1855060001
+      Data2: 1102569812
+      Data3: 375786906
+      Data4: 59625762
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_attack
+  painEvent:
+    Guid:
+      Data1: -1133643302
+      Data2: 1292047896
+      Data3: 1562451353
+      Data4: -1010369138
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_pain
+  deathEvent:
+    Guid:
+      Data1: 194818376
+      Data2: 1311944945
+      Data3: 1205365416
+      Data4: -690921023
+    Path: event:/SFX/ENEMIES/Spitter/sfx_enm_spitter_death
+  isIdleLoopPlaying: 0
 --- !u!1 &1378570078427612
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,12 +385,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378570078427612}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4486111212680060}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82562149796159176
 AudioSource:
@@ -446,12 +532,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545642500031142}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.25, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4964921605943342}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702915690302610
 GameObject:
@@ -477,12 +564,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702915690302610}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4964921605943342}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114516403870706252
 MonoBehaviour:
@@ -539,12 +627,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800354934281564}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4486111212680060}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82795252790878268
 AudioSource:
@@ -683,12 +772,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941440548438108}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4275087559254736}
   - {fileID: 4008255809832150}
   m_Father: {fileID: 4964921605943342}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

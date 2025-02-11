@@ -336,7 +336,9 @@ namespace Gamekit2D
             bullet.rigidbody2D.velocity = new Vector2(facingLeft ? -bulletSpeed : bulletSpeed, 0f);
             bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
 
-            rangedAttackAudioPlayer.PlayRandomSound();
+            //rangedAttackAudioPlayer.PlayRandomSound();
+
+            playerAudio.PlayRangedPistolShot();
         }
 
         // Public functions - called mostly by StateMachineBehaviours in the character's Animator Controller but also by Events.
@@ -449,7 +451,8 @@ namespace Gamekit2D
 
                 if (!wasGrounded && m_MoveVector.y < -1.0f)
                 {//only play the landing sound if falling "fast" enough (avoid small bump playing the landing sound)
-                    landingAudioPlayer.PlayRandomSound(m_CurrentSurface);
+                    //landingAudioPlayer.PlayRandomSound(m_CurrentSurface);
+                    playerAudio.PlayLand(m_CurrentSurface);
                 }
             }
             else
@@ -569,7 +572,12 @@ namespace Gamekit2D
 
         public bool CheckForJumpInput()
         {
-            return PlayerInput.Instance.Jump.Down;
+            if (PlayerInput.Instance.Jump.Down)
+            {
+                playerAudio.PlayJump();
+                return true;
+            }
+            return false;
         }
 
         public bool CheckForFallInput()
@@ -702,7 +710,9 @@ namespace Gamekit2D
                 m_Animator.SetTrigger(m_HashForcedRespawnPara);
 
             m_Animator.SetBool(m_HashGroundedPara, false);
-            hurtAudioPlayer.PlayRandomSound();
+            //hurtAudioPlayer.PlayRandomSound();
+
+            playerAudio.PlayPain();
 
             //if the health is < 0, mean die callback will take care of respawn
             if(damager.forceRespawn && damageable.CurrentHealth > 0)
@@ -714,6 +724,8 @@ namespace Gamekit2D
         public void OnDie()
         {
             m_Animator.SetTrigger(m_HashDeadPara);
+
+            playerAudio.PlayDeath();
 
             StartCoroutine(DieRespawnCoroutine(true, false));
         }
@@ -756,7 +768,9 @@ namespace Gamekit2D
         {
             meleeDamager.EnableDamage();
             meleeDamager.disableDamageAfterHit = true;
-            meleeAttackAudioPlayer.PlayRandomSound();
+            //meleeAttackAudioPlayer.PlayRandomSound();
+
+            playerAudio.PlayStaffSwing();
         }
 
         public void DisableMeleeAttack()

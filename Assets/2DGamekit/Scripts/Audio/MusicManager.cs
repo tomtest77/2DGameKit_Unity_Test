@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
@@ -34,4 +35,27 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    [Header("FMOD Events")]
+    public EventReference startMusicEvent;
+    public EventReference startAmbienceEvent;
+
+    public EventReference zone01MusicEvent;
+    public EventReference zone01AmbienceEvent;
+
+    public EventReference zone02MusicEvent;
+    public EventReference zone02AmbienceEvent;
+
+    public EventReference zone03MusicEvent;
+    public EventReference zone03AmbienceEvent;
+
+    public EventReference zone04MusicEvent;
+    public EventReference zone04AmbienceEvent;
+
+    public EventReference zone05MusicEvent;
+    public EventReference zone05AmbienceEvent;
+
+    public void PlayAmbienceAndMusic(string currentZone)
+    {
+
+    }
 }

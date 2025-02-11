@@ -711,35 +711,49 @@ MonoBehaviour:
       Data2: 1081048159
       Data3: -900217984
       Data4: -199755066
-    Path: event:/SFX/PLAYER/Movement/sfx_plr_fs
+    Path: event:/SFX/PLAYER/Locomotion/sfx_plr_loc_fs
   jumpEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  meleeEvent:
+      Data1: -1868784165
+      Data2: 1284886871
+      Data3: 1110742661
+      Data4: 880925127
+    Path: event:/SFX/PLAYER/Locomotion/sfx_plr_loc_jump
+  landEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  rangedEvent:
+      Data1: 1809872070
+      Data2: 1290942909
+      Data3: -172890205
+      Data4: 1562937584
+    Path: event:/SFX/PLAYER/Locomotion/sfx_plr_loc_land
+  staffSwingEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 17351080
+      Data2: 1156476507
+      Data3: -903922251
+      Data4: 306340253
+    Path: event:/SFX/PLAYER/Attack/sfx_plr_attack_staff_swing
+  rangedPistolShotEvent:
+    Guid:
+      Data1: 1898144821
+      Data2: 1123007090
+      Data3: -712877150
+      Data4: -335901360
+    Path: event:/SFX/PLAYER/Attack/sfx_plr_attack_pistol_shot
+  painEvent:
+    Guid:
+      Data1: 472337222
+      Data2: 1195191184
+      Data3: -501071430
+      Data4: 683896221
+    Path: event:/SFX/PLAYER/Damage/sfx_plr_dmg_pain_general
   deathEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 2112116636
+      Data2: 1158340575
+      Data3: 2089238168
+      Data4: -1546473953
+    Path: event:/SFX/PLAYER/Damage/sfx_plr_dmg_death
 --- !u!1 &1181578502863468
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +965,7 @@ MonoBehaviour:
       Data2: 1081048159
       Data3: -900217984
       Data4: -199755066
-    Path: event:/SFX/PLAYER/Movement/sfx_plr_fs
+    Path: event:/SFX/PLAYER/Locomotion/sfx_plr_loc_fs
 --- !u!1 &1228154595269142
 GameObject:
   m_ObjectHideFlags: 0
