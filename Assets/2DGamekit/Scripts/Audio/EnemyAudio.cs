@@ -7,6 +7,24 @@ using FMODUnity;
 
 public class EnemyAudio : MonoBehaviour
 {
+    [Header("FMOD Events for enemy")]
+    public EventReference footstepEvent;
+    public EventReference idleLoopEvent;
+
+    // One shots
+    public EventReference detectEvent;
+    public EventReference attackEvent;
+    public EventReference painEvent;
+    public EventReference deathEvent;
+
+    // If we want to have access to data in specific events they have to be instantiated (as opposed to one-shots - play and forget)
+    public EventInstance footstepInstance;
+    public EventInstance idleLoopInstance;
+
+    // Variable for storing position of the game object
+    private FMOD.ATTRIBUTES_3D attributes3d;
+
+    public bool isIdleLoopPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,25 +68,6 @@ public class EnemyAudio : MonoBehaviour
         footstepInstance.release();
         idleLoopInstance.release();
     }
-
-    [Header("FMOD Events for enemy")]
-    public EventReference footstepEvent;
-    public EventReference idleLoopEvent;
-
-    // One shots
-    public EventReference detectEvent;
-    public EventReference attackEvent;
-    public EventReference painEvent;
-    public EventReference deathEvent;
-
-    // If we want to have access to data in specific events they have to be instantiated (as opposed to one-shots - play and forget)
-    public EventInstance footstepInstance;
-    public EventInstance idleLoopInstance;
-
-    // Variable for storing position of the game object
-    private FMOD.ATTRIBUTES_3D attributes3d;
-
-    public bool isIdleLoopPlaying = false;
 
     /// <summary>
     /// Plays a footstep sound.

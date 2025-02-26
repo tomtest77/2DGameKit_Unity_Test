@@ -195,6 +195,10 @@ namespace Gamekit2D
                     PlayerInput.Instance.ReleaseControl(false);
                     PlayerInput.Instance.Pause.GainControl();
                     m_InPause = true;
+
+                    // Pause FMOD Events
+                    AudioManager.Instance.SetPauseState(true);
+
                     Time.timeScale = 0;
                     UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("UIMenus", UnityEngine.SceneManagement.LoadSceneMode.Additive);
                 }
@@ -221,6 +225,9 @@ namespace Gamekit2D
                 return;
 
             StartCoroutine(UnpauseCoroutine());
+
+            // Unpause FMOD Events
+            AudioManager.Instance.SetPauseState(false);
         }
 
         protected IEnumerator UnpauseCoroutine()

@@ -71,3 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b5939e3c9a62b448bf8707e7106314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseSnapshotReference:
+    Guid:
+      Data1: 1838684820
+      Data2: 1220873580
+      Data3: 1104785596
+      Data4: 1373127680
+    Path: snapshot:/GameStates/Pause
+  numberOfMonstersDetectedBy: 0

@@ -22,6 +22,9 @@ public class MissileGolem : MonoBehaviour
         public int shieldHP = 10;
     }
 
+    // FMOD Audio Component
+    public BossAudio bossAudio;
+
     public Transform target;
 
     public int laserStrikeCount = 2;
@@ -94,7 +97,7 @@ public class MissileGolem : MonoBehaviour
         }
         originShieldScale = shield.transform.localScale;
         animator = GetComponent<Animator>();
-        
+
         round = 0;
         
         ai = BT.Root();
@@ -379,6 +382,7 @@ public class MissileGolem : MonoBehaviour
     public void PlayStep()
     {
         stepAudioPlayer.PlayRandomSound();
+        bossAudio.gunnerStepEmitter.Play();
     }
 
 #if UNITY_EDITOR

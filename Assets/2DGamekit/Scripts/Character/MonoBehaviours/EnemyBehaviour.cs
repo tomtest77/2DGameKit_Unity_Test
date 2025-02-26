@@ -168,12 +168,6 @@ namespace Gamekit2D
                     // Transition: true -> false, so subtract 1
                     AudioManager.Instance.numberOfMonstersDetectedBy--;
                     Debug.Log("Subtracting 1");
-
-                    //// Optionally ensure the counter doesn't drop below zero
-                    //if (audioManager.numberOfMonstersDetectedBy < 0)
-                    //{
-                    //    audioManager.numberOfMonstersDetectedBy = 0;
-                    //}
                 }
 
                 // Update the stored state to match the new detection state

@@ -19797,12 +19797,12 @@ PrefabInstance:
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
@@ -19848,12 +19848,17 @@ PrefabInstance:
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 542886372}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 520172904}
+    - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 542886372}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
@@ -19887,7 +19892,7 @@ PrefabInstance:
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
@@ -19925,6 +19930,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Path
+      value: event:/_Utilities/Test Events/test_empty_action
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -751622519
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1309741784
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1705871511
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1355061229
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19945,6 +19985,12 @@ SpriteRenderer:
 --- !u!82 &542886371 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 82738184924344070, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 542886368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &542886372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4748812602766727494, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
     type: 3}
   m_PrefabInstance: {fileID: 542886368}
   m_PrefabAsset: {fileID: 0}
@@ -26807,8 +26853,6 @@ ParticleSystem:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -30023,7 +30067,7 @@ PrefabInstance:
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
@@ -30039,6 +30083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
@@ -30065,6 +30114,11 @@ PrefabInstance:
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1197015523}
+    - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1197015525}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -30107,6 +30161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ActivateCanvasWithTranslatedText
       objectReference: {fileID: 0}
@@ -30119,6 +30178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: set_sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114004283927459256, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
         type: 3}
@@ -30156,6 +30220,41 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Path
+      value: event:/_Utilities/Test Events/test_empty_action
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -751622519
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1309741784
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1705871511
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010497050865608682, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+        type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1355061229
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30170,6 +30269,12 @@ AudioSource:
 --- !u!1 &1197015524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1604793323755322, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197015522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1197015525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4748812602766727494, guid: 6bc0b2bb61623f94aa335ee8a769a8f9,
     type: 3}
   m_PrefabInstance: {fileID: 1197015522}
   m_PrefabAsset: {fileID: 0}
@@ -46768,6 +46873,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -550610064892946095, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: pauseSnapshotReference.Path
+      value: snapshot:/GameStates/Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: -550610064892946095, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: pauseSnapshotReference.Guid.Data1
+      value: 1838684820
+      objectReference: {fileID: 0}
+    - target: {fileID: -550610064892946095, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: pauseSnapshotReference.Guid.Data2
+      value: 1220873580
+      objectReference: {fileID: 0}
+    - target: {fileID: -550610064892946095, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: pauseSnapshotReference.Guid.Data3
+      value: 1104785596
+      objectReference: {fileID: 0}
+    - target: {fileID: -550610064892946095, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: pauseSnapshotReference.Guid.Data4
+      value: 1373127680
+      objectReference: {fileID: 0}
     - target: {fileID: 4111754083754678, guid: 06c5c56d99c9e194db056e41d8b8f99b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -46815,6 +46945,46 @@ PrefabInstance:
       propertyPath: initialSceneTransitionDestination
       value: 
       objectReference: {fileID: 249364099}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[0].SceneName
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].SceneName
+      value: Zone01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].Music.Path
+      value: event:/MUSIC/Zone01/mus_zone01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].Music.Guid.Data1
+      value: 1870283182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].Music.Guid.Data2
+      value: 1130628658
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].Music.Guid.Data3
+      value: -1245909113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455463980970367966, guid: 06c5c56d99c9e194db056e41d8b8f99b,
+        type: 3}
+      propertyPath: sceneAudioDataList.Array.data[1].Music.Guid.Data4
+      value: 956059960
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47980,7 +48150,7 @@ PrefabInstance:
     - target: {fileID: -7836333499746372146, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: m_Size.x
-      value: 51.61
+      value: 54.1
       objectReference: {fileID: 0}
     - target: {fileID: -7836333499746372146, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
@@ -48045,12 +48215,12 @@ PrefabInstance:
     - target: {fileID: 2271497964563696714, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.1
+      value: -13.68
       objectReference: {fileID: 0}
     - target: {fileID: 2271497964563696714, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 2271497964563696714, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
@@ -48095,12 +48265,12 @@ PrefabInstance:
     - target: {fileID: 5042400479245583912, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: EventPlayTrigger
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5042400479245583912, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: EventStopTrigger
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5042400479245583912, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
@@ -48140,7 +48310,7 @@ PrefabInstance:
     - target: {fileID: 6752647133089806002, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
       propertyPath: m_Name
-      value: FMODMusicAmbienceCollider
+      value: FMODMusicAmbience_Zone01
       objectReference: {fileID: 0}
     - target: {fileID: 6752647133089806002, guid: 9110199ae62c01f42bb440a3b1e2d769,
         type: 3}
